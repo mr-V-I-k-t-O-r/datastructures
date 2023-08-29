@@ -26,6 +26,6 @@ elements are located in different places in the memory and every element has lin
 ---
 file linked_list.cpp includes simple version of a singly connected linked list, every element of which has one link (to the next element).
 
-It can be expand while you have free memory but time of acces for elements is more than in array and it is different for every element, on averrage it is O(n) also you can`t move to the previous element, because you don`t now where is it places.
+It can be expand while you have free memory but time of acces for elements is more than in array and it is different for every element, on averrage it is O(n) also you can\`t move to the previous element, because you don\`t now where is it places.
 
 elements are located in different places in the memory and every element has link which gives ability to move to the next element.
