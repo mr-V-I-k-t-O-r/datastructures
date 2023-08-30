@@ -1,4 +1,4 @@
-template(class T)
+template<class T>
 class array
 {
 public:
@@ -15,7 +15,7 @@ public:
 		this->pointer = new T[num];
 		for(int i = 0; i < num; i++)
 		{
-			this + i = value;
+			this->pointer[i] = value;
 		}
 	}
 
@@ -25,7 +25,7 @@ public:
 		
 	}
 
-	void size()
+	void length()
 	{
 		return this->size;
 	}
@@ -38,13 +38,13 @@ public:
 		}
 		else
 		{
-			this + place = value;
+			this->pointer[place] = value;
 		}
 	}
 
-	T* operaror[int place]
+	T& operator[ ](int place)
 	{
-		return this + place;
+		return this->pointer[place];
 	}
 
 private:

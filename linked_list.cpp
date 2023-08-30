@@ -7,7 +7,7 @@ public:
 	{
 	public:
 		T value;
-		element* next;
+		element<T>* next;
 		element(T value)
 		{
 			this->value = value;
@@ -17,54 +17,61 @@ public:
 
 	linked_list()
 	{
-		 
-		head = nullptr;
+		this->head = nullptr;
 	}
 
 	void push_back(T value)
 	{
-		if(head == nullptr)
+		if(this->head == nullptr)
 		{
-			head = new element(value);
+			this->head = new element<T>(value);
 		}
 		else
 		{
-			element* now = head;
+			element<T>* now = this->head;
 			while(now->next != nullptr)
 			{
 				now = now->next;
 			}
-			now->next = new element(value);
+			now->next = new element<T>(value);
 		}
 	}
 
 	void push_front(T value)
 	{
-		element* h = new element(value);
+		element<T>* h = new element<T>(value);
 		h->next = this->head;
 		this->head = h;
 		h = nullptr;
 	}
 
-	void pop back()
+	void pop_back()
 	{
-		element* now = this->head;
-		while(now->next->next != nullptr)
+		element<T>* now = this->head;
+		if (now->next == nullptr)
+		{
+			delete head;
+			head = nullptr;
+		}
+
+		while (now->next->next != nullptr)
 		{
 			now = now->next;
 		}
-		delete now->next;
-		now->next = nullptr;
+			delete now->next;
+			now->next = nullptr;
 	}
 
-	void pop front()
+	void pop_front()
 	{
-		element* h = this->head;
-		this->head = h->next;
-		delete h;
+		element<T>* h = this->head->next;
+		delete this->head;
+		this->head = h;
+		h = nullptr;
+		
 	}
 
 private:
-	static element* head;
+	element<T>* head;
 	
 };
