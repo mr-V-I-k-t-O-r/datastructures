@@ -1,6 +1,6 @@
 # DATA STRUCTURES
 ---
-this is a simple realithation of some data strustures, which need only for training in coding this and for better understatndig it.
+this is a simple realization of some data strustures, which need only for training in coding this and for better understatndig it.
 
 under header of every data structure has a name of file, where it places.
 
